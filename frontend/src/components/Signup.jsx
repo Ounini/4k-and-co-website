@@ -12,7 +12,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/_/backend/create", {
+      await axios.post("/_/backend/users/create", {
         name,
         email,
         age,

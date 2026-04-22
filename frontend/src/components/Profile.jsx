@@ -10,14 +10,11 @@ function Profile() {
 
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(
-        `https://4k-and-co-website-j194.vercel.app/users/${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const res = await axios.get(`/_/backend/users/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+      });
       setCurrentUser(res.data);
     };
     getUser();

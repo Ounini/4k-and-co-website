@@ -12,7 +12,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://4k-and-co-website-j194.vercel.app/create", {
+      await axios.post("/_/backend/create", {
         name,
         email,
         age,

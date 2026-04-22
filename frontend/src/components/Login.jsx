@@ -12,13 +12,10 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://4k-and-co-website-j194.vercel.app/users/login",
-        {
-          email,
-          password,
-        },
-      );
+      const res = await axios.post("/_/backend/users/login", {
+        email,
+        password,
+      });
       const token = res.data;
       localStorage.setItem("token", token);
       setSuccessful("User sign up successful");

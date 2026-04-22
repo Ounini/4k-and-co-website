@@ -12,13 +12,13 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/_/backend/users/create", {
+      const res = await axios.post("/_/backend/users/create", {
         name,
         email,
         age,
         password,
       });
-      setSuccessful("User login successful");
+      setSuccessful(res.message);
     } catch (err) {
       console.error(err.message);
       setError(err.message);
